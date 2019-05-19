@@ -6,8 +6,9 @@
     "paths": {
       "@": "src/*",
       "@app": "src/app.js",
-      "@helper": "src/helper",
-      "@service": "src/service"
+      "@database": "src/service/firebase.js",
+      "@helper": "src/helper/*",
+      "@service": "src/service/*"
     }
   },
   "exclude": ["node_modules"]
