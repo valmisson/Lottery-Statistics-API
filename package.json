@@ -1,0 +1,28 @@
+{
+  "name": "lottery-statistics-api",
+  "version": "1.0.0",
+  "description": "API Lottery Statistics",
+  "main": "src/server.js",
+  "author": "Valmisson Grizorte <missongrizorte@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "node src/bin/server.js",
+    "dev": "nodemon -q src/bin/server.js"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.19.0"
+  },
+  "engines": {
+    "node": "11.x"
+  },
+  "_moduleAliases": {}
+}
