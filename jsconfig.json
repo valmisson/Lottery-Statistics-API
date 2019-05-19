@@ -4,7 +4,10 @@
     "allowSyntheticDefaultImports": false,
     "baseUrl": "./",
     "paths": {
-      "@app": "src/app.js"
+      "@": "src/*",
+      "@app": "src/app.js",
+      "@helper": "src/helper",
+      "@service": "src/service"
     }
   },
   "exclude": ["node_modules"]

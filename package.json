@@ -14,7 +14,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "module-alias": "^2.2.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -29,6 +30,9 @@
     "node": "11.x"
   },
   "_moduleAliases": {
-    "@app": "src/app.js"
+    "@": "src",
+    "@app": "src/app.js",
+    "@helper": "src/helper",
+    "@service": "src/service"
   }
 }

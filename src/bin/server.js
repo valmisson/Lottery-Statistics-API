@@ -12,6 +12,7 @@ app.set('port', port)
 const server = http.createServer(app)
 
 server.listen(port, () => {
+  console.clear()
   console.info(`serve run on: http://localhost:${port}`)
 })
 
