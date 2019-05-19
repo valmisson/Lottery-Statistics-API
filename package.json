@@ -31,10 +31,13 @@
     "node": "11.x"
   },
   "_moduleAliases": {
+    "~": "./",
     "@": "src",
     "@app": "src/app.js",
     "@database": "src/service/firebase.js",
     "@helper": "src/helper",
-    "@service": "src/service"
+    "@service": "src/service",
+    "@controller": "src/controller",
+    "@routes": "src/routes"
   }
 }

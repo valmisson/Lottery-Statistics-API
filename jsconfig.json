@@ -4,11 +4,14 @@
     "allowSyntheticDefaultImports": false,
     "baseUrl": "./",
     "paths": {
-      "@": "src/*",
-      "@app": "src/app.js",
-      "@database": "src/service/firebase.js",
-      "@helper": "src/helper/*",
-      "@service": "src/service/*"
+      "~/*": ["./*"],
+      "@/*": ["src/*"],
+      "@app": ["src/app.js"],
+      "@database/*": ["src/service/firebase.js"],
+      "@helper/*": ["src/helper/*"],
+      "@service/*": ["src/service/*"],
+      "@controller/*": ["src/controller/*"],
+      "@routes/*": ["src/routes/*"]
     }
   },
   "exclude": ["node_modules"]
