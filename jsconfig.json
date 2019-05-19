@@ -3,7 +3,9 @@
     "target": "es2018",
     "allowSyntheticDefaultImports": false,
     "baseUrl": "./",
-    "paths": {}
+    "paths": {
+      "@app": "src/app.js"
+    }
   },
   "exclude": ["node_modules"]
 }
