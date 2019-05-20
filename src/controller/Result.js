@@ -1,10 +1,14 @@
+const Scraping = require('@service/scraping')
+
 const SaveResult = async (req, res) => {
   try {
     const { lottery } = req.params
 
-    res.json(lottery)
+    const result = await Scraping(lottery)
+
+    res.json(result)
   } catch (error) {
-    res.sendError(error.message, 500)
+    return res.sendError(error.message, 500)
   }
 }
 
