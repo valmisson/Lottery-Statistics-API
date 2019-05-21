@@ -1,7 +1,8 @@
 const Scraping = require('@service/scraping')
 const { save } = require('@model/Result')
+const { serialize } = require('@handle/Results')
 
-const SaveResult = async (req, res) => {
+exports.SaveResult = async (req, res) => {
   try {
     const { lottery } = req.params
 
@@ -15,39 +16,12 @@ const SaveResult = async (req, res) => {
   }
 }
 
-// Update all results
-const UpdateResult = async (req, res) => {
+exports.UpdateResult = async (req, res) => {
   try {
     const { lottery } = req.params
     const resultsList = [] // should be an array of objects with results
 
-    if (resultsList.length === 0) throw new Error(`Error ao atualizar resultados da ${lottery}, lista de resultados esta vazio`)
-
-    const results = resultsList.map(result => {
-      const { numero, data, dezenas } = result.concurso
-
-      const premiacaoArray = Object.entries(result.concurso.premiacao)
-
-      const premiacao = premiacaoArray.map(premio => {
-        let nome = premio[0].charAt(0).toUpperCase() + premio[0].slice(1)
-        nome = nome.replace(/Acertos_/, '')
-
-        return {
-          nome,
-          ganhadores: premio[1].ganhadores || '0',
-          valor: premio[1].valor_pago
-        }
-      })
-
-      return {
-        concurso: {
-          numero,
-          data
-        },
-        dezenas,
-        premiacao
-      }
-    })
+    const results = serialize(resultsList)
 
     results.forEach(async result => {
       await save({ lottery, result })
@@ -58,5 +32,3 @@ const UpdateResult = async (req, res) => {
     return res.sendError(error.message, 500)
   }
 }
-
-module.exports = { SaveResult, UpdateResult }

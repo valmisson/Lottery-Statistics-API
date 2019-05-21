@@ -1,6 +1,6 @@
 const database = require('@database')
 
-const save = async data => {
+exports.save = async data => {
   try {
     const { lottery, result } = data
     const { numero } = result.concurso
@@ -12,5 +12,3 @@ const save = async data => {
     throw new Error('Error ao salvar resultado da ' + data.lottery)
   }
 }
-
-module.exports = { save }

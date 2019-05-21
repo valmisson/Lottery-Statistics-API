@@ -10,6 +10,7 @@
       "@database/*": ["src/service/firebase.js"],
       "@controller/*": ["src/controller/*"],
       "@helper/*": ["src/helper/*"],
+      "@handle": ["src/handle"],
       "@model/*": ["src/model/*"],
       "@routes/*": ["src/routes/*"],
       "@service/*": ["src/service/*"]

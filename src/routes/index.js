@@ -5,7 +5,8 @@ route.use('/resultado/', ResultRoute)
 
 route.get('/', (req, res) => {
   res.json({
-    save_result: req.entireURL + '/resultado/:lottery/salvar'
+    save_result: req.entireURL + '/resultado/:lottery/salvar',
+    update_results: req.entireURL + '/resultado/:lottery/atualizar'
   })
 })
 
