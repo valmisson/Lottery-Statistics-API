@@ -1,4 +1,5 @@
 const { findAll } = require('@model/Result')
+const { saveFrequencyDozens } = require('@model/Statistics')
 const { frequencyAllDozens } = require('@handle/Statistics')
 
 exports.UpdateStatistics = async (req, res) => {
@@ -7,8 +8,9 @@ exports.UpdateStatistics = async (req, res) => {
     const results = await findAll(lottery)
     const frequencyDozens = frequencyAllDozens(results)
 
-    res.json(frequencyDozens)
-    // res.json({ message: `Estatisticas da ${lottery} atualizada` })
+    await saveFrequencyDozens({ lottery, frequencyDozens })
+
+    res.json({ message: `Estatisticas da ${lottery} atualizada` })
   } catch (error) {
     res.sendError(error.message, 500)
   }
