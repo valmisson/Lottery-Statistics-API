@@ -2,22 +2,24 @@ const { JSDOM } = require('jsdom')
 
 const resultScraping = async lottery => {
   try {
-    const URL = `https://g1.globo.com/loterias/${lottery}.ghtml`
+    const lotteryName = lottery.replace(/megasena/, 'mega-sena')
+
+    const URL = `https://noticias.uol.com.br/loterias/${lotteryName}/`
 
     const DOM = await JSDOM.fromURL(URL)
     const HTML = DOM.serialize()
 
     const { document } = (new JSDOM(HTML)).window
 
-    const concursoEl = document.querySelector('.content-lottery__info')
-    const dezenasEl = document.querySelectorAll('.content-lottery__result')
-    const premiacaoEl = document.querySelectorAll('.tabela_premiacao table tbody tr')
+    const concursoEl = document.querySelector('.lottery-info span')
+    const dezenasEl = document.querySelectorAll('.lt-result .lt-number')
+    const premiacaoEl = document.querySelectorAll('.lottery-results-table table tbody tr')
 
     const concursoInfo = concursoEl.textContent.trim().split(' ')
 
     const concurso = {
       numero: concursoInfo[1],
-      data: concursoInfo[3]
+      data: concursoInfo[4].replace(/\./g, '/')
     }
 
     const dezenas = []
@@ -35,9 +37,9 @@ const resultScraping = async lottery => {
     premiacaoEl.forEach(el => {
       const elContent = el.querySelectorAll('td')
 
-      const nome = elContent[0].textContent.trim()
-      const ganhadores = elContent[1].textContent.trim().replace(/Acumulou!/g, 0)
-      const valor = elContent[2].textContent.trim().replace(/R\$ /g, '').replace(/-/g, '0,00')
+      const nome = elContent[0].textContent.replace(/ acertos/, '')
+      const ganhadores = elContent[1].textContent
+      const valor = elContent[2].textContent
 
       premiacao.push({
         nome,

@@ -1,4 +1,4 @@
-const Scraping = require('@service/scraping')
+const Scraping = require('~/src/service/scraping')
 const { save } = require('@model/Result')
 const { serialize } = require('@handle/Results')
 
