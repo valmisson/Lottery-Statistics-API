@@ -1,0 +1,47 @@
+{
+  "name": "lottery-statistics-api",
+  "version": "0.0.0",
+  "description": "API Lottery Statistics",
+  "main": "src/server.js",
+  "author": "Valmisson Grizorte <missongrizorte@gmail.com>",
+  "private": true,
+  "scripts": {
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "start": "node src/server.js",
+    "dev": "nodemon -q src/server.js",
+    "lint": "eslint src/**"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "module-alias": "^2.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "nodemon": "^2.0.2",
+    "sucrase": "^3.10.1"
+  },
+  "engines": {
+    "node": "13.x"
+  },
+  "_moduleAliases": {
+    "~": "./"
+  }
+}
