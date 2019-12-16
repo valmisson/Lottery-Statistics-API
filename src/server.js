@@ -1,11 +1,10 @@
+import 'dotenv/config'
 import 'module-alias/register'
-import env from 'dotenv'
 import debug from 'debug'
 import http from 'http'
 
 import app from '@src/app'
 
-env.config()
 debug('lottery-statistics-api:server')
 
 const port = normalizePort(process.env.PORT || '3000')
