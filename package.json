@@ -23,8 +23,11 @@
     ]
   },
   "dependencies": {
+    "debug": "^4.1.1",
     "dotenv": "^8.2.0",
-    "module-alias": "^2.2.2"
+    "express": "^4.17.1",
+    "module-alias": "^2.2.2",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
@@ -42,6 +45,8 @@
     "node": "13.x"
   },
   "_moduleAliases": {
-    "~": "./"
+    "~": "./",
+    "@src": "src",
+    "@routes": "src/routes/index.js"
   }
 }
