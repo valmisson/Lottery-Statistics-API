@@ -47,6 +47,8 @@
   "_moduleAliases": {
     "~": "./",
     "@src": "src",
-    "@routes": "src/routes/index.js"
+    "@routes": "src/routes/index.js",
+    "@utils": "src/utils",
+    "@services": "src/services"
   }
 }
