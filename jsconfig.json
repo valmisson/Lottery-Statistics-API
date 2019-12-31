@@ -7,8 +7,11 @@
       "~/*": ["./*"],
       "@src/*": ["src/*"],
       "@utils/*": ["src/utils/*"],
+      "@sciences/*": ["src/sciences/*"],
       "@services/*": ["src/services/*"],
-      "@routes/*": ["src/routes/index.js"]
+      "@routes": ["src/routes/index.js"],
+      "@models": ["src/models/index.js"],
+      "@controllers": ["src/controllers/index.js"]
     }
   },
   "exclude": ["node_modules"]

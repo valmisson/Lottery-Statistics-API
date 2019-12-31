@@ -18,7 +18,7 @@ const Scraping = async lottery => {
       const dezenasEl = document.querySelectorAll(dezenasQuery)
       const premiacaoEl = document.querySelectorAll('.related-box .description.ng-binding')
 
-      const concursoInfo = concursoEl.textContent.split(' ')
+      const concursoInfo = concursoEl.textContent.replace(/\s+/g, '|').split('|')
 
       const concurso = {
         numero: concursoInfo[1].trim(),
@@ -37,9 +37,9 @@ const Scraping = async lottery => {
 
       premiacaoEl.forEach(el => {
         const premiacaoInfo = el.textContent.trim()
-          .replace(/apostas?|ganhadoras?,|números|- [2-6]|acertados|acertos|R\$|0,00/g, '')
+          .replace(/apostas?|ganhadoras?,|números|- [2-6]|acertados|acertos|R\$/g, '')
           .replace(/Não houve acertador/, '0  0,00')
-          .replace(/\s\s+/g, ' ')
+          .replace(/\s+/g, ' ')
           .split(' ')
 
         premiacao.push({

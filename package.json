@@ -28,7 +28,8 @@
     "express": "^4.17.1",
     "firebase-admin": "^8.8.0",
     "module-alias": "^2.2.2",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "puppeteer": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
@@ -48,8 +49,11 @@
   "_moduleAliases": {
     "~": "./",
     "@src": "src",
-    "@routes": "src/routes/index.js",
     "@utils": "src/utils",
-    "@services": "src/services"
+    "@sciences": "src/sciences",
+    "@services": "src/services",
+    "@routes": "src/routes/index.js",
+    "@models": "src/models/index.js",
+    "@controllers": "src/controllers/index.js"
   }
 }
