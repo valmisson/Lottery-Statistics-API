@@ -5,7 +5,7 @@ import { ResultControllers, StatisticControllers } from '@controllers'
 const route = Router()
 
 route.post('/resultado/salvar', ResultControllers.save)
-route.post('/estatisticas/atualizar', StatisticControllers.updateAll)
+route.put('/estatisticas/atualizar', StatisticControllers.updateAll)
 
 route.get('/', (req, res) => {
   const entireURL = `${req.protocol}://${req.get('host')}${req.originalUrl}`
