@@ -2,12 +2,12 @@
   "name": "lottery-statistics-api",
   "version": "0.0.0",
   "description": "API Lottery Statistics",
-  "main": "src/server.js",
+  "main": "dist/server.js",
   "author": "Valmisson Grizorte <missongrizorte@gmail.com>",
   "private": true,
   "scripts": {
     "build": "sucrase ./src -d ./dist --transforms imports",
-    "start": "node src/server.js",
+    "start": "node dist/server.js",
     "dev": "nodemon -q src/server.js",
     "lint": "eslint src/**"
   },
@@ -45,16 +45,6 @@
     "sucrase": "^3.10.1"
   },
   "engines": {
-    "node": "13.x"
-  },
-  "_moduleAliases": {
-    "~": "./",
-    "@src": "src",
-    "@utils": "src/utils",
-    "@sciences": "src/sciences",
-    "@services": "src/services",
-    "@routes": "src/routes/index.js",
-    "@models": "src/models/index.js",
-    "@controllers": "src/controllers/index.js"
+    "node": ">=12.x"
   }
 }

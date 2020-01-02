@@ -1,7 +1,9 @@
 import 'dotenv/config'
-import 'module-alias/register'
 import debug from 'debug'
 import http from 'http'
+
+// register module alias
+import './aliases'
 
 import app from '@src/app'
 
