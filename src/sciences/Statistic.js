@@ -5,18 +5,7 @@ class Statistic {
     try {
       const frequency = frequencyDozensList
 
-      dozens.forEach(dezena => {
-        if (frequency[dezena]) {
-          frequency[dezena].vezes += 1
-
-          return
-        }
-
-        frequency[dezena] = {
-          dezena,
-          vezes: 1
-        }
-      })
+      this._addTimesFrequency(dozens, frequency)
 
       return frequency
     } catch (err) {
@@ -32,24 +21,28 @@ class Statistic {
       results.forEach(result => {
         const { dezenas } = result
 
-        dezenas.forEach(dezena => {
-          if (frequency[dezena]) {
-            frequency[dezena].vezes += 1
-
-            return
-          }
-
-          frequency[dezena] = {
-            dezena,
-            vezes: 1
-          }
-        })
+        this._addTimesFrequency(dezenas, frequency)
       })
 
       return frequency
     } catch (error) {
       throw new Error(ERR_PARSE_FREQUENCY_DOZENS)
     }
+  }
+
+  _addTimesFrequency (dozens, frequency) {
+    dozens.forEach(dezena => {
+      if (frequency[dezena]) {
+        frequency[dezena].vezes += 1
+
+        return
+      }
+
+      frequency[dezena] = {
+        dezena,
+        vezes: 1
+      }
+    })
   }
 }
 
