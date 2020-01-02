@@ -32,10 +32,10 @@ class ResultController {
       await ResultModel.save(result, lottery)
       await StatisticModel.save(frequencyDozens, lottery)
 
-      res.json({
-        loteria: lottery,
-        concurso: result.concurso.numero,
-        messagem: 'Resultado salvo e estatistica atualizada com sucesso.'
+      res.info({
+        statusCode: 201,
+        messagem: `Resultado salvo e estatistica atualizada com sucesso.
+          Loteria: ${lottery}, Concurso: ${result.concurso.numero}.`
       })
     } catch (err) {
       next(err)

@@ -18,9 +18,9 @@ class StatisticController {
 
       await StatisticModel.save(allFrequency, lottery)
 
-      res.json({
-        loteria: lottery,
-        messagem: 'Estatisticas atualizada com sucesso.'
+      res.info({
+        statusCode: 200,
+        message: `Estatisticas atualizada com sucesso. Loteria: ${lottery}`
       })
     } catch (err) {
       next(err)
