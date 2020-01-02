@@ -20,7 +20,7 @@ class StatisticController {
 
       res.info({
         statusCode: 200,
-        message: `Estatisticas atualizada com sucesso. Loteria: ${lottery}`
+        message: `Estatísticas atualizada, ${lottery}.`
       })
     } catch (err) {
       next(err)

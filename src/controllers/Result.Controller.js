@@ -34,8 +34,7 @@ class ResultController {
 
       res.info({
         statusCode: 201,
-        messagem: `Resultado salvo e estatistica atualizada com sucesso.
-          Loteria: ${lottery}, Concurso: ${result.concurso.numero}.`
+        messagem: `Resultado salvo e estatística atualizada, ${lottery} - ${concurso.numero}.`
       })
     } catch (err) {
       next(err)
