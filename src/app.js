@@ -12,6 +12,9 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.set('json spaces', 2)
 
+// see logs files
+app.use('/logs', express.static('logs'))
+
 // response info handler
 app.use((req, res, next) => {
   res.info = (info) => {
