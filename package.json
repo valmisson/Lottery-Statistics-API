@@ -1,6 +1,6 @@
 {
   "name": "lottery-statistics-api",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "API Lottery Statistics",
   "main": "src/bin/server.js",
   "author": "Valmisson Grizorte <missongrizorte@gmail.com>",
@@ -30,7 +30,7 @@
     "nodemon": "^1.19.0"
   },
   "engines": {
-    "node": "10.x"
+    "node": ">=10.x"
   },
   "_moduleAliases": {
     "~": "./",
