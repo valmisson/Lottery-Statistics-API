@@ -12,12 +12,12 @@ route.get('/', (req, res) => {
 
   res.json({
     salvar_resultado: {
-      url: entireURL + '/resultado/salvar',
+      url: entireURL + 'resultado/salvar',
       method: 'POST',
       input: 'lottery'
     },
     atualizar_estatisticas: {
-      url: entireURL + '/estatisticas/atualizar',
+      url: entireURL + 'estatisticas/atualizar',
       method: 'POST',
       input: 'lottery'
     }
