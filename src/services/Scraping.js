@@ -5,7 +5,7 @@ const Scraping = async lottery => {
   try {
     const URL = `http://loterias.caixa.gov.br/wps/portal/loterias/landing/${lottery}`
 
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] })
     const page = await browser.newPage()
 
     await page.goto(URL)
