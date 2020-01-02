@@ -3,7 +3,7 @@ import { ERR_PARSE_FREQUENCY_DOZENS } from '@utils/ErrorTypes'
 class Statistic {
   parseFrequency ({ dozens, frequencyDozensList }) {
     try {
-      const frequency = frequencyDozensList
+      const frequency = frequencyDozensList || {}
 
       this._addTimesFrequency(dozens, frequency)
 

@@ -3,8 +3,7 @@ import Statistic from '@sciences/Statistic'
 import { ResultModel, StatisticModel } from '@models'
 import { isLotteryValid } from '@utils/Helps'
 import {
-  ERR_LOTTERY_INVALID, ERR_DUPLICATE_RESULT,
-  ERR_EMPTY_STATISTIC
+  ERR_LOTTERY_INVALID, ERR_DUPLICATE_RESULT
 } from '@utils/ErrorTypes'
 
 class ResultController {
@@ -22,8 +21,6 @@ class ResultController {
       }
 
       const frequencyDozensList = await StatisticModel.find(lottery)
-
-      if (!frequencyDozensList) throw new Error(ERR_EMPTY_STATISTIC)
 
       const frequencyDozens = Statistic.parseFrequency({
         dozens: dezenas, frequencyDozensList

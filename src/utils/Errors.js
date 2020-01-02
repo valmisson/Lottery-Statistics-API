@@ -5,7 +5,6 @@ import {
   ERR_FIND_STATISTIC,
   ERR_DUPLICATE_RESULT,
   ERR_EMPTY_RESULTS,
-  ERR_EMPTY_STATISTIC,
   ERR_PARSE_FREQUENCY_DOZENS,
   ERR_SAVE_RESULT,
   ERR_SAVE_STATISTIC
@@ -39,9 +38,6 @@ export const ErrorMessage = (errorType, lottery) => {
       break
     case ERR_EMPTY_RESULTS:
       error = createError(404, `Não existe resultados, ${lottery}.`)
-      break
-    case ERR_EMPTY_STATISTIC:
-      error = createError(404, `Não existe estatísticas, ${lottery}.`)
       break
     case ERR_PARSE_FREQUENCY_DOZENS:
       error = createError(500, `Error ao analizar frequência das dezenas, ${lottery}.`)
