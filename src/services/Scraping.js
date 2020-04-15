@@ -16,7 +16,7 @@ const Scraping = async lottery => {
 
       const concursoEl = document.querySelector('.title-bar h2 span')
       const dezenasEl = document.querySelectorAll(dezenasQuery)
-      const premiacaoEl = document.querySelectorAll('.related-box .description.ng-binding')
+      const premiacaoEl = document.querySelectorAll('.related-box .description')
 
       const concursoInfo = concursoEl.textContent.replace(/\s+/g, '|').split('|')
 
@@ -41,6 +41,8 @@ const Scraping = async lottery => {
           .replace(/Não houve acertador/, '0  0,00')
           .replace(/\s+/g, ' ')
           .split(' ')
+
+        if (!/Sena|Quina|Quadra|Terno|Duque|[11-20]|0/.test(premiacaoInfo[0])) return
 
         premiacao.push({
           nome: premiacaoInfo[0],
