@@ -1,6 +1,6 @@
 {
   "name": "lottery-statistics-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "API Lottery Statistics",
   "main": "dist/server.js",
   "author": "Valmisson Grizorte <missongrizorte@gmail.com>",
