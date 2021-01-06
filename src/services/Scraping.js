@@ -12,13 +12,14 @@ const Scraping = async lottery => {
 
     const result = await page.evaluate(lottery => {
       const dezenasQuery = lottery === 'lotomania' || lottery === 'lotofacil'
-        ? '.resultado-loteria table tbody tr td' : '#ulDezenas li'
+        ? '.lista-dezenas li' : '#ulDezenas li'
 
       const concursoEl = document.querySelector('.title-bar h2 span')
       const dezenasEl = document.querySelectorAll(dezenasQuery)
       const premiacaoEl = document.querySelectorAll('.related-box .description')
 
-      const concursoInfo = concursoEl.textContent.replace(/\s+/g, '|').split('|')
+      const concursoInfo = concursoEl.textContent.trim()
+        .replace(/\s+/g, '|').split('|')
 
       const concurso = {
         numero: concursoInfo[1].trim(),
@@ -42,7 +43,7 @@ const Scraping = async lottery => {
           .replace(/\s+/g, ' ')
           .split(' ')
 
-        if (!/Sena|Quina|Quadra|Terno|Duque|[11-20]|0/.test(premiacaoInfo[0])) return
+        if (!/^\d+$/.test(premiacaoInfo[0])) return
 
         premiacao.push({
           nome: premiacaoInfo[0],
